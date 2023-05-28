@@ -11,34 +11,43 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 0px;
 `;
 
 const Links = styled.div`
   display: flex;
   align-items: center;
-  text-decoration: none;
-  width: 100%;
+  gap: 50px;
 `;
 
-const icons = styled.div`
+const Logo = styled.img`
+  height: 150px;
+`;
+
+const List = styled.ul`
+  display: flex;
+  gap: 20px;
+  list-style: none;
+`;
+
+const ListItem = styled.li`
+  cursor: pointer;
+  &:hover {
+    color: #ff0000;
+  }
+`;
+
+const Icons = styled.div`
   display: flex;
   align-items: flex-end;
-  width: 1400px;
-  margin-right: 10px;
 `;
 
-const logo = styled.img``;
-const List = styled.ul``;
-const ListItem = styled.li``;
-const Icons = styled.div``;
-const Icon = styled.img``;
-const Button = styled.button`
-  border: 1px solid black;
-  padding: 10px;
-`;
-const Icon2 = styled.img``;
-const Button2 = styled.button`
-  border: 1px solid black;
+const Icon = styled.img`
+  width: 30px;
+  cursor: pointer;
+  gap: 20px;
+  border: none;
+  border-radius: 50%;
   padding: 10px;
 `;
 
@@ -47,7 +56,7 @@ const Navbar = () => {
     <Section>
       <Container>
         <Links>
-          <logo src="./img/favicon.png" />
+          <Logo src="./img/theCodingWhiz.gif" alt="Logo" />
           <List>
             <ListItem>Home</ListItem>
             <ListItem>About Me</ListItem>
@@ -55,17 +64,22 @@ const Navbar = () => {
             <ListItem>Contact</ListItem>
           </List>
         </Links>
-        <icons>
-          <a href="https://github.com/theCodingWhiz" target="_blank">
-            <img src="./img/github.png" />
+        <Icons>
+          <a
+            href="https://github.com/theCodingWhiz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon src="./img/github.png" alt="GitHub" />
           </a>
           <a
             href="https://www.linkedin.com/in/muhammad-omar-931936270"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            <img src="./img/linkedin.png" />
+            <Icon src="./img/linkedin.png" alt="LinkedIn" />
           </a>
-        </icons>
+        </Icons>
       </Container>
     </Section>
   );
