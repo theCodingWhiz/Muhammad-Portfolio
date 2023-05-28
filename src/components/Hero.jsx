@@ -85,6 +85,11 @@ const Img = styled.img`
   }
 `;
 
+const IronmanMini = styled.img`
+  width: 30px; /* Adjust the width as desired */
+  height: auto; /* Maintain aspect ratio */
+`;
+
 const Hero = () => {
   return (
     <Section>
@@ -93,7 +98,7 @@ const Hero = () => {
         <Left>
           <Title>Hi, I'm Muhammad Omar</Title>
           <WhatWeDo>
-            <Line src="./line.png" alt="Line" />
+            <IronmanMini src="./img/ironmanmini.png" alt="ironman mini" />
             <Subtitle>Thank you for visiting my portfolio!</Subtitle>
           </WhatWeDo>
           <Description>

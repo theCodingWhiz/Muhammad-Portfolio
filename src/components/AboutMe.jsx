@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 const Section = styled.div`
   height: 100vh;
@@ -23,7 +23,6 @@ const Left = styled.div`
 
 const Right = styled.div`
   flex: 1;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,9 +46,6 @@ const Line = styled.img`
 
 const Subtitle = styled.h2`
   color: #cc0000;
-`;
-
-const Description = styled.p`
   font-size: 20px;
   background-color: #d3af37;
   color: #000000;
@@ -60,13 +56,19 @@ const Description = styled.p`
   max-width: 100%;
 `;
 
-const Button = styled.button`
-  background-color: #cc0000;
-  color: #ffffff;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 20px;
+const Description = styled.p`
   font-size: 20px;
+`;
+
+const Button = styled.button`
+  font-size: 20px;
+  background-color: #d3af37;
+  color: #000000;
+  border-radius: 20px;
+  border: none;
+  margin: auto;
+  padding: 10px 20px;
+  width: fit-content;
   cursor: pointer;
   transition: all 0.5s ease;
 
@@ -74,6 +76,12 @@ const Button = styled.button`
     background-color: #ffffff;
     color: #cc0000;
   }
+`;
+
+const IronmanMini = styled.img`
+  width: 30px; /* Adjust the width as desired */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Preserve image proportions */
 `;
 
 const AboutMe = () => {
@@ -84,11 +92,18 @@ const AboutMe = () => {
         <Right>
           <Title>Your Limit Is Your Only Imagination</Title>
           <WhatWeDo>
-            <Line src="./line.png" alt="Line" />
-            <Subtitle>Check out my projects I've been working on!</Subtitle>
+            <IronmanMini src="./img/ironmanmini.png" alt="ironman mini" />
+            <Subtitle>
+              "The only way to do great work is to love what you do." - Steve
+              Jobs
+              <br />
+              Remember, being a software developer is a journey of continuous
+              learning and growth. Stay inspired, persevere through challenges,
+              and embrace the joy of creating and solving problems with code.
+            </Subtitle>
           </WhatWeDo>
           <Description>
-            <Button>Projects</Button>
+            <Button>About Me</Button>
           </Description>
         </Right>
       </Container>
