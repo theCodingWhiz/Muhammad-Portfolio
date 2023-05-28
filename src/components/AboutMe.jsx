@@ -31,6 +31,10 @@ const Right = styled.div`
 
 const Title = styled.h1`
   font-size: 50px;
+  color: #d3af37;
+  -webkit-text-stroke: 1px #cc0000;
+  text-align: center;
+  margin: 0;
 `;
 
 const WhatWeDo = styled.div`
@@ -94,12 +98,16 @@ const AboutMe = () => {
           <WhatWeDo>
             <IronmanMini src="./img/ironmanmini.png" alt="ironman mini" />
             <Subtitle>
-              "The only way to do great work is to love what you do." - Steve
-              Jobs
-              <br />
-              Remember, being a software developer is a journey of continuous
-              learning and growth. Stay inspired, persevere through challenges,
-              and embrace the joy of creating and solving problems with code.
+              <p>
+                "The only way to do great work is to love what you do." - Steve
+                Jobs
+              </p>
+              <p>
+                Remember, being a software developer is a journey of continuous
+                learning and growth. Stay inspired, persevere through
+                challenges, and embrace the joy of creating and solving problems
+                with code.
+              </p>
             </Subtitle>
           </WhatWeDo>
           <Description>

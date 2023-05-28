@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Navbar from "./Navbar";
 
 const Section = styled.div`
@@ -9,12 +9,13 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding: auto 20px;
+  margin: auto;
 `;
 
 const Container = styled.div`
-  height: 100vh;
-  scroll-snap-align: center;
-  width: 1400px;
+  max-width: 1400px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 `;
@@ -34,6 +35,10 @@ const Right = styled.div`
 
 const Title = styled.h1`
   font-size: 50px;
+  color: #d3af37;
+  -webkit-text-stroke: 1px #cc0000;
+  text-align: center;
+  margin: 0;
 `;
 
 const WhatWeDo = styled.div`
@@ -48,7 +53,13 @@ const Line = styled.img`
 `;
 
 const Subtitle = styled.h2`
-  color: #cc0000;
+  font-size: 20px;
+  background-color: #d3af37;
+  color: #000000;
+  border-radius: 20px;
+  border: 5px solid #000000;
+  padding: 20px;
+  font-weight: bold;
 `;
 
 const Description = styled.p`
@@ -57,15 +68,14 @@ const Description = styled.p`
   color: #000000;
   border-radius: 20px;
   border: 5px solid #000000;
-  padding: 20px;
+  padding: 10px;
   width: 800px;
-  max-width: 100%;
+  width: 100%;
 `;
 
 const Img = styled.img`
-  width: 800px;
-  height: 600px;
-  max-width: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   position: absolute;
   top: 0;
@@ -86,8 +96,8 @@ const Img = styled.img`
 `;
 
 const IronmanMini = styled.img`
-  width: 30px; /* Adjust the width as desired */
-  height: auto; /* Maintain aspect ratio */
+  width: 30px;
+  height: auto;
 `;
 
 const Hero = () => {
