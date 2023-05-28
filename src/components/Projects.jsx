@@ -1,22 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import keyframes from "styled-components";
 
 const data = [
   {
     title: "Project 1",
-    image: "image-url-1",
+    image: "./img/landingpage.jpg",
     link: "project-link-1",
     description: "Description of Project 1",
   },
   {
     title: "Project 2",
-    image: "image-url-2",
+    image: "./img/1687.jpg",
     link: "project-link-2",
     description: "Description of Project 2",
   },
   {
     title: "Project 3",
-    image: "image-url-3",
+    image: "./img/3339.jpg",
     link: "project-link-3",
     description: "Description of Project 3",
   },
@@ -34,6 +35,9 @@ const GridContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 20px;
+  width: 100%;
+  max-width: 1400px; /* Adjust the value as needed */
+  margin: 0 auto;
 `;
 
 const GridItem = styled.div`
@@ -42,8 +46,8 @@ const GridItem = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  max-width: 300px;
   width: 100%;
+  max-width: 300px; /* Adjust the value as needed */
   padding: 20px;
   background-color: #d3af37;
   border-radius: 10px;
@@ -55,12 +59,21 @@ const GridItem = styled.div`
   }
 `;
 
+const rotateAnimation = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
 const Title = styled.h1`
   font-size: 24px;
   color: #cc0000;
   margin-bottom: 10px;
+  animation: ${rotateAnimation} 2s linear infinite; // Apply the animation to the Title component
 `;
-
 const Screenshot = styled.img`
   width: 100%;
   max-width: 200px;

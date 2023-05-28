@@ -1,5 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 import styled from "styled-components";
+import { OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import Cube from "./Cube";
 
 const Section = styled.div`
   height: 100vh;
@@ -18,7 +21,10 @@ const Container = styled.div`
 
 const Left = styled.div`
   flex: 1;
-  position: relative;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Right = styled.div`
@@ -27,6 +33,11 @@ const Right = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Title = styled.h1`
@@ -34,7 +45,9 @@ const Title = styled.h1`
   color: #d3af37;
   -webkit-text-stroke: 1px #cc0000;
   text-align: center;
-  margin: 0;
+  @media only screen and (max-width: 768px) {
+    font-size: 60px;
+  }
 `;
 
 const WhatWeDo = styled.div`
@@ -92,7 +105,16 @@ const AboutMe = () => {
   return (
     <Section>
       <Container>
-        <Left></Left>
+        <Left>
+          <Canvas camera={{ position: [5, 5, 5], fov: 25 }}>
+            <Suspense fallback={null}>
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[3, 2, 1]} />
+              <Cube />
+              <OrbitControls enableZoom={false} autoRotate />
+            </Suspense>
+          </Canvas>
+        </Left>
         <Right>
           <Title>Your Limit Is Your Only Imagination</Title>
           <WhatWeDo>
