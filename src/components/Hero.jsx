@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 
 const Section = styled.div`
   height: 100vh;
@@ -47,9 +49,9 @@ const WhatWeDo = styled.div`
   gap: 20px;
 `;
 
-const Line = styled.img`
-  width: 50px;
-  height: 5px;
+const IronmanMini = styled.img`
+  width: 30px;
+  height: auto;
 `;
 
 const Subtitle = styled.h2`
@@ -69,7 +71,6 @@ const Description = styled.p`
   border-radius: 20px;
   border: 5px solid #000000;
   padding: 10px;
-  width: 800px;
   width: 100%;
 `;
 
@@ -93,11 +94,6 @@ const Img = styled.img`
       transform: scale(1.1);
     }
   }
-`;
-
-const IronmanMini = styled.img`
-  width: 30px;
-  height: auto;
 `;
 
 const Hero = () => {
@@ -127,6 +123,11 @@ const Hero = () => {
         </Left>
         <Right>
           <Img src="./img/Marvel-Avengers-PNG.png" alt="Ironman" />
+          <Canvas>
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[3, 2, 1]} />
+            <OrbitControls enableZoom={false} autoRotate />
+          </Canvas>
         </Right>
       </Container>
     </Section>

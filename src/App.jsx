@@ -12,7 +12,7 @@ const Container = styled.div`
   overflow-y: auto;
   scrollbar-width: none;
   color: white;
-  background: url("./img/futuristic.jpg");
+  // background: url("./img/3155.jpg");
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import styled from "styled-components";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import Cube from "./Cube";
+import { useGLTF } from "@react-three/drei";
 
 const Section = styled.div`
   height: 100vh;
@@ -45,6 +45,7 @@ const Title = styled.h1`
   color: #d3af37;
   -webkit-text-stroke: 1px #cc0000;
   text-align: center;
+
   @media only screen and (max-width: 768px) {
     font-size: 60px;
   }
@@ -101,16 +102,32 @@ const IronmanMini = styled.img`
   object-fit: contain; /* Preserve image proportions */
 `;
 
+const TesseractCube = () => {
+  const { nodes, materials } = useGLTF("./img/tesseract_cube-transformed.glb");
+  return (
+    <mesh
+      geometry={nodes.Cube_Material_0.geometry}
+      material={materials.Material}
+      rotation={[Math.PI / 4, Math.PI / 4, 0]}
+      scale={[0.5, 0.5, 0.5]} // Adjust the scale as needed
+      position={[0, 0, 0]} // Adjust the position as needed
+    />
+  );
+};
+
 const AboutMe = () => {
   return (
     <Section>
       <Container>
         <Left>
-          <Canvas camera={{ position: [5, 5, 5], fov: 25 }}>
+          <Canvas
+            camera={{ position: [0, 0, 3.5], near: 0.01, far: 100 }}
+            style={{ width: "100%", height: "100%" }}
+          >
             <Suspense fallback={null}>
               <ambientLight intensity={0.5} />
               <directionalLight position={[3, 2, 1]} />
-              <Cube />
+              <TesseractCube />
               <OrbitControls enableZoom={false} autoRotate />
             </Suspense>
           </Canvas>
