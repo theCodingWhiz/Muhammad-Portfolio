@@ -42,8 +42,8 @@ const Right = styled.div`
 
 const Title = styled.h1`
   font-size: 50px;
-  color: #d3af37;
-  -webkit-text-stroke: 1px #cc0000;
+  color: #333d70;
+  -webkit-text-stroke: 1px #acb0f7;
   text-align: center;
 
   @media only screen and (max-width: 768px) {
@@ -57,18 +57,19 @@ const WhatWeDo = styled.div`
   gap: 20px;
 `;
 
-const Line = styled.img`
-  width: 50px;
-  height: 5px;
+const Infinity_stones = styled.img`
+  width: 150px;
+  height: auto;
+  object-fit: contain;
 `;
 
 const Subtitle = styled.h2`
   color: #cc0000;
   font-size: 20px;
-  background-color: #d3af37;
-  color: #000000;
+  background-color: #6e5e8e;
+  color: #ffffff;
   border-radius: 20px;
-  border: 5px solid #000000;
+  // border: 5px solid #000000;
   padding: 20px;
   width: 800px;
   max-width: 100%;
@@ -79,39 +80,36 @@ const Description = styled.p`
 `;
 
 const Button = styled.button`
-  font-size: 20px;
-  background-color: #d3af37;
-  color: #000000;
+  width: auto;
+  height: auto;
   border-radius: 20px;
-  border: none;
-  margin: auto;
-  padding: 10px 20px;
-  width: fit-content;
+  // border: 5px solid #000000;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  background-color: #6e5e8e;
+  color: #000000;
   cursor: pointer;
-  transition: all 0.5s ease;
 
   &:hover {
-    background-color: #ffffff;
-    color: #cc0000;
+    background-color: #48315b;
+    color: white;
   }
 `;
 
-const IronmanMini = styled.img`
-  width: 30px; /* Adjust the width as desired */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Preserve image proportions */
-`;
+const Infinity_gauntlet_textured_no_rig = (props) => {
+  const { nodes, materials } = useGLTF(
+    "/img/infinity_gauntlet_textured_no_rig-transformed.glb"
+  );
 
-const TesseractCube = () => {
-  const { nodes, materials } = useGLTF("./img/tesseract_cube-transformed.glb");
   return (
-    <mesh
-      geometry={nodes.Cube_Material_0.geometry}
-      material={materials.Material}
-      rotation={[Math.PI / 4, Math.PI / 4, 0]}
-      scale={[0.5, 0.5, 0.5]} // Adjust the scale as needed
-      position={[0, 0, 0]} // Adjust the position as needed
-    />
+    <group {...props} dispose={null}>
+      <mesh
+        geometry={nodes.Object_2.geometry}
+        material={materials.infinitygauntlet_0}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
+    </group>
   );
 };
 
@@ -121,13 +119,13 @@ const AboutMe = () => {
       <Container>
         <Left>
           <Canvas
-            camera={{ position: [0, 0, 3.5], near: 0.01, far: 100 }}
+            camera={{ position: [1, 1, 2.5], near: 0.01, far: 100 }}
             style={{ width: "100%", height: "100%" }}
           >
             <Suspense fallback={null}>
               <ambientLight intensity={0.5} />
               <directionalLight position={[3, 2, 1]} />
-              <TesseractCube />
+              <Infinity_gauntlet_textured_no_rig />
               <OrbitControls enableZoom={false} autoRotate />
             </Suspense>
           </Canvas>
@@ -135,7 +133,10 @@ const AboutMe = () => {
         <Right>
           <Title>Your Limit Is Your Only Imagination</Title>
           <WhatWeDo>
-            <IronmanMini src="./img/ironmanmini.png" alt="ironman mini" />
+            <Infinity_stones
+              src="./img/infinity_stones.png"
+              alt="infinity stones"
+            />
             <Subtitle>
               <p>
                 "The only way to do great work is to love what you do." - Steve

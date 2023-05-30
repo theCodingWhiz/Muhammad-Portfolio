@@ -49,7 +49,7 @@ const GridItem = styled.div`
   width: 100%;
   max-width: 300px; /* Adjust the value as needed */
   padding: 20px;
-  background-color: #d3af37;
+  background-color: #6e5e8e;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
@@ -70,7 +70,7 @@ const rotateAnimation = keyframes`
 
 const Title = styled.h1`
   font-size: 24px;
-  color: #cc0000;
+  color: #c0caff;
   margin-bottom: 10px;
   animation: ${rotateAnimation} 2s linear infinite; // Apply the animation to the Title component
 `;

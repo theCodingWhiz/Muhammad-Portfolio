@@ -7,7 +7,7 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  width: 1400px;
+  width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,8 +32,9 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   cursor: pointer;
+  font-size: 20px;
   &:hover {
-    color: #ff0000;
+    color: #c0caff;
   }
 `;
 

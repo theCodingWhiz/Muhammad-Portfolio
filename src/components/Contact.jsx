@@ -18,13 +18,15 @@ const Container = styled.div`
 const Title = styled.h1`
   font-size: 50px;
   text-align: center;
+  color: #333d70;
+  -webkit-text-stroke: 1px #acb0f7;
 `;
 
 const Input = styled.input`
   width: 100%;
   height: 50px;
   border-radius: 20px;
-  border: 5px solid #000000;
+  // border: 5px solid #000000;
   padding: 10px;
   font-size: 20px;
   margin-bottom: 20px;
@@ -34,7 +36,7 @@ const TextArea = styled.textarea`
   width: 100%;
   height: 200px;
   border-radius: 20px;
-  border: 5px solid #000000;
+  // border: 5px solid #000000;
   padding: 10px;
   font-size: 20px;
   margin-bottom: 20px;
@@ -44,13 +46,18 @@ const Button = styled.button`
   width: 100%;
   height: 50px;
   border-radius: 20px;
-  border: 5px solid #000000;
+  // border: 5px solid #000000;
   padding: 10px;
   font-size: 20px;
   margin-bottom: 20px;
-  background-color: #ffd300;
+  background-color: #6e5e8e;
   color: #000000;
   cursor: pointer;
+
+  &:hover {
+    background-color: #48315b;
+    color: white;
+  }
 `;
 
 const Contact = () => {

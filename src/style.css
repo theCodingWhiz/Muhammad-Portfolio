@@ -147,3 +147,24 @@
 .star-field .layer:nth-child(3) {
   animation: sf-fly-by-3 5s linear infinite;
 }
+
+.parallax-container {
+  height: 500px; /* Adjust the height as needed */
+  overflow: hidden;
+  position: relative;
+}
+
+.parallax {
+  background: url("https://c4.wallpaperflare.com/wallpaper/367/372/866/the-avengers-avengers-endgame-avengers-endgame-infinity-gauntlet-hd-wallpaper-preview.jpg")
+    center/cover no-repeat fixed;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* Add additional styles and content as needed */
